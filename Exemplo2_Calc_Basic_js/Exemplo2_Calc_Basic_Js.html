@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+   <text> Primeiro nº </text>
+   <input type="number" id="input_n1">
+   <br>
+
+   <text> Segundo nº </text>
+   <input type="number" id="input_n2">
+   <br>
+
+   <button onclick="Multiplicar()"> Multiplicar</button>
+   <button onclick="Dividir()">Dividir</button>
+   <button onclick="Somar()">Somar</button>
+   <button onclick="Subtrair()">Subtrair</button>
+   <button onclick="resetar()"> Limpar </button>
+</body>
+
+</html>
+
+<script>
+    function Multiplicar () {
+       const multiplicar = input_n1.value * input_n2.value;
+        alert(multiplicar)
+    };
+
+    function Subtrair () {
+       const subtrair = input_n1.value - input_n2.value;
+       alert (subtrair)
+    };
+
+    function Somar () {
+       const somar = input_n1.value + input_n2.value;
+       alert (somar);
+    };
+
+    function Dividir () {
+       const dividir = input_n1.value / input_n2.value;
+       alert(dividir)
+    };
+
+    const resetar = () => {
+        input_n1.value = '';
+        input_n2.value = '';
+    }
+
+
+</script>

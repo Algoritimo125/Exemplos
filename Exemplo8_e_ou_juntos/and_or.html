@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Comentarios-->
+     Altura: 
+     <input type="number" id="input_altura">
+
+     idade: 
+     <input type="number" id="input_idade">
+
+     Acompanhado: 
+     <select  id="select_acompanhado"> 
+        <option>Sim</option>
+        <option>Não</option>
+     </select>
+
+     <button onclick="Validar()"> Validar entrada</button>
+</body>
+</html>
+
+<script> 
+   function validar () {
+        var altura = Number(input_altura.value);
+        var idade = Number(input_idade.value);
+        var acompanhado = select_acompanhado.value;
+
+        if (altura >= 1.6 && (idade >= 18 || acompanhado == 'Sim' )) {
+            div_msm.innerHTML = `Você pode entrar no parque 😊`;
+        } else {
+            div_msm.innerHTML = `Você não pode entrar no parque 😒`
+        }
+    } 
+</script>

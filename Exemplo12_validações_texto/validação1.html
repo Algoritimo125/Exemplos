@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input 
+        type="text"
+        id="input_frase"
+        oninput="formatar()"
+        maxlength="11">
+
+
+    <div id="div_msm"></div>
+</body>
+</html>
+
+<script>
+    function validar () {
+        var frase = input_frase.value;
+
+        var tamanho_frase = frase.length;
+
+        div_msm.innerHTML = `
+        Tamanho da frase: ${tamanho_frase}<br>
+        Primeiro caractere: ${frase[0]}<br> 
+        Segundo Caractere: ${frase[2]}<br>
+        Último caractere: ${frase[tamanho_frase-1]}<br>
+        Frase maiúscula: ${frase.toUpperCase()}<br>
+        Frase minuscula: ${frase.toLowerCase()}<br> 
+        Frase termina com .com: ${frase.endsWith('.com')}<br>
+        Frase termina com teste: ${frase.startsWith('teste')}<br>
+        `
+
+        // Métodos de string
+        //.toUpperCAse = transforma texto baixo em caixa alta
+        // .length = conta a qtd de caracteres de uma string e retorna um nº equivalente
+        // .endsWith(Ex: '.br') - compara
+        // .startsWith('xpto')
+        // .includes('@')
+        // .replaces('A','4') - substitui um
+        // .replacesAll('A', '3') - substitui todos
+    }
+
+    function formatar () {
+        var cpf = input_frase.value;
+
+        if (cpf.length < 11){
+            div_msm.innerHTML = 'CPF inválido'
+        
+        } else {
+            div_msm.innerHTML = `${cpf} - CPF válido`;
+
+            for (var i = 0; i < cpf.length; i++) {
+    
+                var caractere_atual = cpf[i];
+
+                if (i == 2 || i == 5) {
+                    div_msm.innerHTML += `${caractere_atual}.`;
+                } else if (i == 8){
+                    div_msm.innerHTML += `${caractere_atual}-`;
+                } else {
+                    div_msm.innerHTML += `${caractere_atual}`;
+                }
+            }
+        }
+    }
+</script>

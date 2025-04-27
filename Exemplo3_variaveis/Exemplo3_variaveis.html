@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Ano de nascimento: </p>
+    <input type="number" id="input_nascimento">
+
+    <button onclick="ver()"> Ver idade</button>
+</body>
+</html>
+
+<script> 
+function ver() {
+    var nascimento = input_nascimento.value;
+
+    var idade = 2025 - nascimento;
+
+    alert("Sua idade é: " + idade)
+};
+
+</script>

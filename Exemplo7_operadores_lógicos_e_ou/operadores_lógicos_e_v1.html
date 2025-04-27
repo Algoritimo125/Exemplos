@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite a temperatura:
+    <input type="number" id="input_temperatura">
+
+    <button onclick="calcular()"> Calcular temperatura</button>
+
+    <div id="div_msm"></div>
+    
+</body>
+</html>
+<script>
+    function calcular() {
+        var temperatura = Number(input_temperatura.value)
+    
+        if (temperatura < 15 ) {
+            div_msm.innerHTML = `Temperatura desconfortável`
+        } else if (temperatura <= 25) {
+            div_msm.innerHTML = `Temperatura confortável`
+        } else { 
+              div_msm.innerHTML = `Temperatura desconfortável`
+        }
+    }
+</script>

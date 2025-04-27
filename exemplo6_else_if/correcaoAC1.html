@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>QUANTIDADE DE ENERGIA CONSUMIDA</h1>
+    <input type="text" id="input_kwh">
+    <br><br>
+
+    <h1>QUAL A BANDEIRA TARIFARIA</h1>
+    <input type="text" id="input_bandeira">
+    <br><br>
+
+    <h1>QUANTIDADE DE INTERNET</h1>
+    <input type="text" id="input_mb">
+    <br><br>
+
+    <h1>POSSUI LINHA TELEFONICA VINCULADA</h1>
+    <input type="text" id="input_telefone">
+    <br><br>
+
+    <button onclick="calcular()"> CALCULAR DESPESAS FIXAS</button>
+    <br><br>
+
+    <div id="div_msm"></div>
+</body>
+</html>
+
+<script>
+    function calcular (){
+        var kwh = Number(input_kwh.value);
+        var bandeira = input_bandeira.value;
+        var valorBase = kwh;
+
+        if (bandeira == "verde") {
+            valorBase = kwh * 0.75
+        } if (bandeira == "amarela") {
+            valorBase = kwh * 0.9;
+        }
+
+        if (kwh <= 50) {
+            valorBase = valorBase * 0.9;
+        }
+
+        var mb = Number(input_mb.value);
+        var telefone = input_telefone.value;
+        var contaInternet = mb * 0.80;
+
+        if (telefone == "sim") {
+            contaInternet = contaInternet * 1.35;
+        } else {
+            contaInternet = contaInternet * 0.925
+        }
+
+        totalDespesas = contaInternet + valorBase;
+
+        div_msm.innerHTML = `${kwh} - ${bandeira} - ${valorBase} - ${mb} - ${contaInternet} - ${totalDespesas}`
+    }
+</script>
