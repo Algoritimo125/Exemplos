@@ -31,11 +31,11 @@ Cada pasta contém **códigos, explicações e comentários** para facilitar o e
 
 ## 💻 Tecnologias Utilizadas
 
-Os exemplos podem ser implementados em diversas linguagens, dependendo da abordagem do curso. Algumas das tecnologias utilizadas incluem:
-- **Python**
-- **JavaScript**
-- **C/C++**
-- **Java**
+Os exemplos podem ser implementados em diversas linguagens, dependendo da abordagem do curso. Neste caso todos os códigos são feitos por:
+- **Java Script**
+- **HTML5**
+- **CSS3**
+
 
 ## 🏗️ Contribuições e Expansão
 
