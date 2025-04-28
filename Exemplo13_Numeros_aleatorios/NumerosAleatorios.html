@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input_min">
+    <br>
+    <input type="text" id="input_max">
+    <br>
+    <div id="div_msm"></div>
+
+    <button onclick="gerar()">gerar Aleatorio</button>
+</body>
+
+</html>
+
+<script>
+    function gerar() {
+        var min = Number(input_min.value);
+        var max = Number(input_max.value);
+
+        var aleatorio = Math.random(); // 0 a 0.999999
+
+        var aleatorio_10 = aleatorio * 10;
+        var aleatorio_10_11 = aleatorio + 10;
+        var aleatorio_7_15 = aleatorio * 8 + 7;
+
+        var intervalo = (max - min) + 1;
+        var aleatorio_min_max = aleatorio * intervalo + min;
+        var rendondo = parseInt(aleatorio_min_max);
+
+        div_msm.innerHTML = `Aleatório sorteado: ${aleatorio} <br>
+        Aleatorio 0 a 10: ${aleatorio_10}<br>
+        Aleatorio 10 a 11: ${aleatorio_10_11}<br>
+        Aleatorio 7 a 15: ${aleatorio_7_15}<br>
+        Aleatorio min a max: ${rendondo}`;
+    }
+</script>
